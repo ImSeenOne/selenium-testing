@@ -1,6 +1,8 @@
 const { Builder } = require('selenium-webdriver')
 const { Before, After } = require('@cucumber/cucumber');
 const chrome = require('selenium-webdriver/chrome');
+require('chromedriver');
+
 
 Before(async () => {
     global.driver = await new Builder().forBrowser('chrome')
@@ -12,5 +14,5 @@ Before(async () => {
 });
 
 After(async () => {
-    driver.quit();
+    await driver.quit();
 });

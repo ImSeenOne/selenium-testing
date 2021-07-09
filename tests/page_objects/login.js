@@ -31,5 +31,9 @@ module.exports = {
         }, 15000);
 
         await driver.findElement(By.name("password")).sendKeys(text);
-    }
+    },
+
+    successfulMessage: () => {
+        return driver.findElement(By.tagName("h3"));
+    },
 }
